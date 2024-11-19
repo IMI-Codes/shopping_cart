@@ -6,13 +6,14 @@
 import scrapy
 
 
-class earbud_Item(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
+class shopping_Item(scrapy.Item):
     product_name = scrapy.Field()
-    manufacturer_name = scrapy.Field()
     original_price = scrapy.Field()
     discount_price = scrapy.Field()
     stars = scrapy.Field()
-    reviews = scrapy.Field()
-    pass
+    review_count = scrapy.Field()
+    
+class earbud_Item(scrapy.Item,shopping_Item): # type: ignore
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+    manufacturer_name = scrapy.Field()

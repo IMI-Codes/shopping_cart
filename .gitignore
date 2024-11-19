@@ -5618,3 +5618,4 @@ my_space/Lib/site-packages/twisted/newsfragments/.gitignore
 my_space/Lib/site-packages/twisted/trial/newsfragments/.gitignore
 my_space/Lib/site-packages/twisted/web/newsfragments/.gitignore
 my_space/Lib/site-packages/twisted/words/newsfragments/.gitignore
+note.txt
