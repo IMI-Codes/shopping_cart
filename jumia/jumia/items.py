@@ -12,8 +12,7 @@ class shopping_Item(scrapy.Item):
     discount_price = scrapy.Field()
     stars = scrapy.Field()
     review_count = scrapy.Field()
+    discount_percentage = scrapy.Field()
     
-class earbud_Item(scrapy.Item,shopping_Item): # type: ignore
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+class earbud_Item(shopping_Item): # type: ignore
     manufacturer_name = scrapy.Field()
