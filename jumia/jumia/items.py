@@ -16,3 +16,7 @@ class shopping_Item(scrapy.Item):
     
 class earbud_Item(shopping_Item): # type: ignore
     manufacturer_name = scrapy.Field()
+    product_type = scrapy.Field()
+
+class laptop_Item(shopping_Item):
+    pass

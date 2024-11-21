@@ -19,6 +19,7 @@ class headsetSpider(scrapy.Spider):
                 item["stars"] = product.css("div.stars ::text").get() #yes
                 #item["review_count"] = product.xpath('//div[@class="rev"]/text()').get()#modify 
                 item['discount_percentage'] = product.css("div._dsct ::text").get()
+                item["product_type"] = "earbuds"
                 yield item # type: ignore
         next_page_url = response.css('a.pg[aria-label="Next Page"]::attr(href)').get()
         if next_page_url is not None:
