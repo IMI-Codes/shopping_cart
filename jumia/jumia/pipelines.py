@@ -20,13 +20,15 @@ class JumiaPipeline:
         adapter["manufacturer_name"] = company_name
         
         star_value = adapter.get("stars")
-        star_holder = star_value.split("out") # type: ignore
-        score_value = int(star_holder[0])
-        adapter["stars"] = score_value
+        if star_value is not None:
+            star_holder = star_value.split("out") # type: ignore
+            score_value = float(star_holder[0])
+            adapter["stars"] = score_value
         
         percentage_value = adapter.get("discount_percentage")
-        percentage_holder = int(percentage_pattern.search(percentage_value).group()) # type: ignore
-        adapter["discount_percentage"] = percentage_holder
+        if percentage_value is not None:
+            percentage_holder = int(percentage_pattern.search(percentage_value).group()) # type: ignore
+            adapter["discount_percentage"] = percentage_holder
         
         return item
 
