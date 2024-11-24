@@ -8,11 +8,13 @@ import scrapy
 
 class shopping_Item(scrapy.Item):
     product_name = scrapy.Field()
-    original_price = scrapy.Field()
-    discount_price = scrapy.Field()
+    original_price_naira = scrapy.Field()
+    discount_price_naira = scrapy.Field()
     stars = scrapy.Field()
     review_count = scrapy.Field()
     discount_percentage = scrapy.Field()
+    original_price_dollar = scrapy.Field()
+    discount_price_dollar = scrapy.Field()
     
 class earbud_Item(shopping_Item): # type: ignore
     manufacturer_name = scrapy.Field()

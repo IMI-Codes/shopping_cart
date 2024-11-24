@@ -18,8 +18,8 @@ class LaptopScraperSpider(scrapy.Spider):
                 
                 item["product_name"] = product.css("h3.name ::text").get()#yes
                 if discount_price:    
-                    item["original_price"] = product.css("div.old ::text").get()#yes
-                    item["discount_price"] = product.css("div.prc ::text").get()#yes
+                    item["original_price_naira"] = product.css("div.old ::text").get()#yes
+                    item["discount_price_naira"] = product.css("div.prc ::text").get()#yes
                     item['discount_percentage'] = product.css("div._dsct ::text").get()
                 else:
                     item["original_price"] = product.css("div.prc ::text").get()
