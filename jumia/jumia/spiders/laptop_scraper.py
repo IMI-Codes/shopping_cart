@@ -22,9 +22,10 @@ class LaptopScraperSpider(scrapy.Spider):
                     item["discount_price_naira"] = product.css("div.prc ::text").get()#yes
                     item['discount_percentage'] = product.css("div._dsct ::text").get()
                 else:
-                    item["original_price"] = product.css("div.prc ::text").get()
+                    item["original_price_naira"] = product.css("div.prc ::text").get()
                 item["stars"] = product.css("div.stars ::text").get() #yes
                 #item["review_count"] = product.xpath('//div[@class="rev"]/text()').get()#modify 
+                #get product url
                 
                 item["product_type"] = "laptop"
                 yield item # type: ignore

@@ -15,7 +15,7 @@ class shopping_Item(scrapy.Item):
     discount_percentage = scrapy.Field()
     original_price_dollar = scrapy.Field()
     discount_price_dollar = scrapy.Field()
-    
+    product_url = scrapy.Field()
 class earbud_Item(shopping_Item): # type: ignore
     manufacturer_name = scrapy.Field()
     product_type = scrapy.Field()
