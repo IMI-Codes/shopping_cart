@@ -12,12 +12,18 @@ BOT_NAME = "proiz"
 SPIDER_MODULES = ["proiz.spiders"]
 NEWSPIDER_MODULE = "proiz.spiders"
 
+# settings.py 
+
+FEEDS = {
+    './data/data.csv': {'format': 'csv',"overwrite":True},
+    './data.jsonl': {'format': 'jsonlines',"overwrite":True}
+}
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "proiz (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -91,3 +97,7 @@ ROBOTSTXT_OBEY = True
 REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
+
+
+
+

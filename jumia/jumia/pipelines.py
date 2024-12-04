@@ -76,6 +76,49 @@ class JumiaPipeline:
         
 
         return item
+# pipelines.py
+
+import mysql.connector
+
+class SaveToMySQLPipeline: # type: ignore
+
+
+    def __init__(self):
+        self.conn = mysql.connector.connect(
+            host = 'localhost',
+            user = 'root',
+            password = 'manasseh',
+            database = 'wish_list'
+        )
+
+        ## Create cursor, used to execute commands
+        self.cur = self.conn.cursor()
+        
+        ## Create books table if none exists
+        self.cur.execute("""
+        CREATE TABLE IF NOT EXISTS placeholder(
+            id int NOT NULL auto_increment, 
+            url VARCHAR(255),
+            title text,
+            upc VARCHAR(255),
+            product_type VARCHAR(255),
+            price_excl_tax DECIMAL,
+            price_incl_tax DECIMAL,
+            tax DECIMAL,
+            price DECIMAL,
+            availability INTEGER,
+            num_reviews INTEGER,
+            stars INTEGER,
+            category VARCHAR(255),
+            description text,
+            PRIMARY KEY (id)
+        )
+        """)
+
+    def process_item(self, item, spider):
+        return item
+
+
 
 
 """

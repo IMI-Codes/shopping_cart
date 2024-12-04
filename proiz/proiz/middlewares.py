@@ -6,7 +6,7 @@
 from scrapy import signals
 
 # useful for handling different item types with a single interface
-from itemadapter import is_item, ItemAdapter
+from itemadapter import is_item, ItemAdapter # type: ignore
 
 
 class ProizSpiderMiddleware:
@@ -101,3 +101,5 @@ class ProizDownloaderMiddleware:
 
     def spider_opened(self, spider):
         spider.logger.info("Spider opened: %s" % spider.name)
+    
+    

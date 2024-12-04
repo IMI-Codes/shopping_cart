@@ -12,6 +12,12 @@ BOT_NAME = "jumia"
 SPIDER_MODULES = ["jumia.spiders"]
 NEWSPIDER_MODULE = "jumia.spiders"
 
+# settings.py 
+
+FEEDS = {
+    'data.csv': {'format': 'csv'}
+}
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "jumia (+http://www.yourdomain.com)"
